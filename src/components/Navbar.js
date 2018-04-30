@@ -8,6 +8,7 @@ const Navbar = () => (
   <nav className="navbar is-transparent">
     <div className="container">
       <div className="navbar-brand">
+        <h1>The Hawaii Independent</h1>
       </div>
       <div className="navbar-start">
         <Link className="navbar-item" to="/about">
