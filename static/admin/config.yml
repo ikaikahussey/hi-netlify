@@ -12,11 +12,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "post_title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Dek", name: "dek", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Topic", name: "topic", widget: "relation", searchFields: "title"}
+      - {label: "Topic",  collection: "topic", name: "topic_title", widget: "relation", searchFields: ["topic_title"], valueField: "topic_title"}
 
   - name: "topic"
     label: "Topic"
@@ -25,8 +25,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "topic_title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Topic", name: "tags", widget: "list"}
